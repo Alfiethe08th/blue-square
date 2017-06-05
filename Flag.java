@@ -1,6 +1,5 @@
-// Bluej project: lesson5-2/sierraFlag
 
-public class Flag
+public class Flags
 {
     private Picture pic;
     private int width;
@@ -29,7 +28,7 @@ public class Flag
         if (y<(height/3)||y>=(2*height/3)||x<(width/3)||x>=(2*width/3))
         {
             c = Color.WHITE;
-            // TODO: Write the if/else statement to determine if a pixel should be blue or white.
+            // TODO: Write the if/else statement to determine if
         }
         else{
             c = Color.BLUE;
