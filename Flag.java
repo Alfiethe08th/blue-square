@@ -1,30 +1,39 @@
 
-public class Flag
+public class Flags
 {
-    public double radius;
-    public double volume;
-    public double surfaceArea;
-    
-    public void addAir(double amount){
-         this.volume = this.volume + amount;
-         System.out.print("addAir "+"\t");
+    private Picture pic;
+    private int width;
+    private int height;
+
+    //You don't need to change this.
+    public Flag(int width, int height)
+    {
+        this.width = width;
+        this.height = height;
+        pic = new Picture(width, height);
+        pic.draw();
+        for (int x = 0; x < width; x++)
+        {
+            for (int y = 0; y < height; y++)
+            {
+                Color c = getColorAt(x, y);
+                pic.setColorAt(x, y, c);
+            }
+        }
     }
-      public double getRadius(){
-      double rad = (double) (3*this.volume)/(4*Math.PI);
-      double power =(double) 1/3;
-      radius = Math.pow(rad,power);
-      System.out.print("getRadius "+"\t");
-      return radius;
-    }
-    public double getVolume(){
-         this.volume =  volume;
-         System.out.print("getVolume"+"\t");
-        return this.volume;
-    }
-    public double getSurfaceArea(){
-         surfaceArea = (double)(4*Math.PI*Math.pow(this.radius,2));
-         System.out.print("SurfaceArea "+"\t");
-        return surfaceArea;
+
+    public Color getColorAt(int x, int y)
+    {
+        Color c;
+        if (y<(height/3)||y>=(2*height/3)||x<(width/3)||x>=(2*width/3))
+        {
+            c = Color.WHITE;
+            // TODO: Write the if/else statement to determine if
+        }
+        else{
+            c = Color.BLUE;
+        }
+        return c;
     }
 
 }
